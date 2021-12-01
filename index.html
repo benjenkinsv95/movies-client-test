@@ -1,17 +1,109 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>API Token Authentication</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <h1>API Token Authentication</h1>
+  <h2> This is a toy application. Do not enter real passwords, or passwords you have used anywhere else!</h2>
+
+  <section id="before-sign-in">
+    <form id="sign-up" class="border">
+      <fieldset>
+        <legend>Sign up</legend>
+        <input type="text" name="credentials[email]" placeholder="Email" required>
+        <input type="password" name="credentials[password]" placeholder="Password" required>
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+        <button class="btn btn-primary">Sign up</button>
+      </fieldset>
+    </form>
+
+    <form id="sign-in" class="border">
+      <fieldset>
+        <legend>Sign in</legend>
+        <input type="text" name="credentials[email]" placeholder="Email" required>
+        <input type="password" name="credentials[password]" placeholder="Password" required>
+        <button class="btn btn-primary">Sign in</button>
+      </fieldset>
+    </form>
+  </section>
+
+  
+  <section id="after-sign-in">
+    <form id="sign-out" class="border">
+      <fieldset>
+        <legend>Sign Out</legend>
+        <button class="btn btn-danger">Sign out</button>
+      </fieldset>
+    </form>
+
+    <form id="change-password" class="border">
+      <fieldset>
+        <legend>Change Password!</legend>
+        <input type="password" name="passwords[old]" placeholder="Old Password" required>
+        <input type="password" name="passwords[new]" placeholder="New Password" required>
+        <button class="btn btn-primary">Change password</button>
+      </fieldset>
+    </form>
+
+    <form id="movies-create" class="border">
+      <fieldset>
+        <legend>Create One Movie</legend>
+        <input type="text" name="movie[title]" placeholder="Enter Movie Text" required>
+        <input type="text" name="movie[director]" placeholder="Enter Movie Director" required>
+        <button class="btn btn-primary">Create Movie</button>
+      </fieldset>
+    </form>
+
+    <form id="movies-index" class="border">
+      <fieldset>
+        <legend>Get All Movies</legend>
+        <button class="btn btn-primary">Get All Movies</button>
+      </fieldset>
+    </form>
+
+    <form id="movies-show" class="border">
+      <fieldset>
+        <legend>Get One Movie</legend>
+        <input type="text" name="movie[id]" placeholder="Enter Movie ID" required>
+        <button class="btn btn-primary">Get Movie</button>
+      </fieldset>
+    </form>
+
+    <form id="movies-delete" class="border">
+      <fieldset>
+        <legend>Delete One Movie</legend>
+        <input type="text" name="movie[id]" placeholder="Enter Movie ID" required>
+        <button class="btn btn-danger">Delete Movie</button>
+      </fieldset>
+    </form>
+
+    <form id="movies-update" class="border">
+      <fieldset>
+        <legend>Update One Movie</legend>
+        <input type="text" name="movie[id]" placeholder="Enter Movie ID" required>
+        <input type="text" name="movie[title]" placeholder="Enter Movie Text" required>
+        <input type="text" name="movie[director]" placeholder="Enter Movie Director" required>
+        <button class="btn btn-primary">Update Movie</button>
+      </fieldset>
+    </form>
+  </section>
+
+  <!-- Add our messaging -->
+  <section>
+    <div id="error-message"></div>
+    <div id="movies-display"></div>
+  </section>
+</body>
+
 </html>
